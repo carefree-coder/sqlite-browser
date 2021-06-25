@@ -29,7 +29,6 @@ Installation
 - Or, you can double-click on any sqlite database file to launch the app.
 
 
-Pre-compiled rpm and deb binaries will be made available, and also a tarball.
 
 Screenshots
 -----------
