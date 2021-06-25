@@ -1,6 +1,6 @@
 Name:           sqlite-browser
 Version:        0.2
-Release:        2%{dist}
+Release:        3%{dist}
 Summary:        Browse SQLite databases
 License:        GPLv2
 URL:            http://carefree.com/gnu/%{name}
