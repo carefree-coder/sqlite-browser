@@ -1,0 +1,10 @@
+# ignore all .o files
+*.o
+
+# ignore all .so files
+*.so
+
+# ignore precompiled header files
+*.gch
+
+

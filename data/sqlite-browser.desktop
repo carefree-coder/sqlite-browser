@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=SQLite Browser
+Exec=sqlite-browser %f
+Icon=sqlitebrowser
+Comment=Browse SQLite databases
+StartupNotify=false
+Terminal=false
+Categories=GTK;GNOME;Utility;Viewer;
+Name[en_GB]=SQLite Browser
