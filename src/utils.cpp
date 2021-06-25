@@ -46,7 +46,7 @@ GtkScrolledWindow {  \n\
 \n\
 /** gridcells **/  \n\
 .gridcell {  \n\
-	background-color: lightgrey;  \n\
+	background-color: white;  \n\
 	color: black;  \n\
 	padding: 5px;  \n\
 	border-right: 0.5px solid black;  \n\
