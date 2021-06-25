@@ -32,11 +32,12 @@ Installation
 
 Screenshots
 -----------
+![Adwaita Light](screenshots/adwaita_light.png  "Adwaita Light")  \
 ![Landing Page](screenshots/landing_page.png "Landing Page")  \
 ![Northwind](screenshots/northwind_sqlite.png "Northwind")  \
 ![International Characters](screenshots/international_characters_.png "International Characters")  \
 ![Sakila db](screenshots/sakila_db.png "Sakila db")  \
-![Adwaita Light](screenshots/adwaita_light.png  "Adwaita Light")
+
 
 
 
