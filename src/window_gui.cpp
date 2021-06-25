@@ -824,7 +824,7 @@ void                make_treeview () {
 		if(folderNo == 0){
 			/// DBs
 			if(g_strcmp0(validdb, "db") == 0){
-				file = "/usr/share/icons/hicolor/scalable/apps/downloadr.png"  ;
+				file = "/usr/share/icons/hicolor/scalable/apps/dbicon.png"  ;
 				//file = dbiconfile ;
 			}
 			if(g_strcmp0(validdb, "invaliddb") == 0){
