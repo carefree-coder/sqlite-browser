@@ -19,7 +19,7 @@ Installation
 ------------
 <code>git clone https://github.com/carefree-coder/sqlite-browser.git</code>  
 <code>cd sqlite-browser</code>  
-<code>./autogen.sh [arguments]       eg: ./autogen.sh --prefix=/usr</code>  
+<code>./autogen.sh [optional arguments]       eg: ./autogen.sh --prefix=/usr</code>  
 <code>make</code>  
 <code>make install</code>  
 
