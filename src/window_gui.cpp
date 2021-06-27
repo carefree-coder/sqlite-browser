@@ -822,16 +822,31 @@ void                make_treeview () {
 		const gchar * file = (folderNo < 2) ? dbiconfile : tableiconfile;
 
 		if(folderNo == 0){
-			/// DBs
-			if(g_strcmp0(validdb, "db") == 0){
-				file = "/usr/share/icons/hicolor/scalable/apps/dbicon.png"  ;
-				//file = dbiconfile ;
-			}
-			if(g_strcmp0(validdb, "invaliddb") == 0){
-				//file = "/usr/share/icons/hicolor/scalable/apps/sheetapp-dbinvalid.png";
-				file = "/usr/share/icons/hicolor/scalable/apps/downloadr-invalid.png";
-				//file = "/usr/share/icons/hicolor/scalable/apps/downloadr.png";
-			}
+			GError *error = NULL;
+			GtkIconTheme *icon_theme;
+			GdkPixbuf *pixbuf;
+			icon_theme = gtk_icon_theme_get_default ();
+
+			if(g_strcmp0(validdb, "db") == 0)
+				file = "dbicon";
+			if(g_strcmp0(validdb, "invaliddb") == 0)
+				file = "downloadr-invalid";
+
+			pixbuf = gtk_icon_theme_load_icon (icon_theme,
+			                                   file, /* icon name */
+			                                   24, /* size */
+			                                   0,  /* flags */
+			                                   &error);
+			if (!pixbuf) {
+		    		g_warning ("Couldn't load icon: %s", error->message);
+		    		g_error_free (error);
+		  }
+			else {
+		    		/* Use the pixbuf */
+		    		g_object_set (cell, "pixbuf", pixbuf, NULL);
+		    		g_object_unref (pixbuf);
+		    		return;
+		  }
 		}
 		else if(folderNo == 2){
 			/// Data table
