@@ -7,5 +7,5 @@ Comment=Browse SQLite databases
 StartupNotify=false
 Terminal=false
 Categories=GTK;GNOME;Utility;Viewer;
-Name[en_GB]=SQLite Browser;
+Name[en_GB]=SQLite Browser
 MimeType=application/vnd.sqlite3;application/x-sqlite3;
