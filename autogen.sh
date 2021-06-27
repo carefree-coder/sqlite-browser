@@ -4,7 +4,7 @@
 
 # usage:
 # run these commands from a terminal:
-#    ./autogen.sh [arguments]    eg. ./autogen.sh --prefix=/usr
+#    ./autogen.sh [optional arguments]    eg. ./autogen.sh --prefix=/usr
 #    make
 #    make install
 
@@ -26,6 +26,7 @@ MAINTAINER="fiskap@protonmail.com"
 
 
 datadir="\$(datadir)"
+homedir="~/.local"
 DESTDIR="\$(DESTDIR)"
 gtk_update_icon_cache="\$(gtk_update_icon_cache)"
 TAB="$(printf '\t')"
@@ -73,12 +74,19 @@ ${TAB}@-if test -z "${DESTDIR}"; then echo "Updating Gtk icon cache."; ${gtk_upd
 FOE
 
 
+
+
 cat > data/Makefile.am << FOE
 # The desktop files
 desktopdir = ${datadir}/applications
 dist_desktop_DATA = ${PROGNAME}.desktop
 mimedir = ${datadir}/mime/packages
 dist_mime_DATA = ${PROGNAME}.xml
+
+install-data-hook: update-mime-database
+uninstall-hook: update-mime-database
+update-mime-database:
+	@-if test -z "${DESTDIR}"; then echo "Updating mime database.";	echo "application/vnd.sqlite3=sqlite-browser.desktop;"  >> ${datadir}/applications/defaults.list; echo "application/x-sqlite3=sqlite-browser.desktop;" >> ${datadir}/applications/defaults.list; echo  "application/vnd.sqlite3=sqlite-browser.desktop;"   >> /usr/share/applications/defaults.list; echo "application/x-sqlite3=sqlite-browser.desktop;" >> /usr/share/applications/defaults.list; echo  "application/vnd.sqlite3=sqlite-browser.desktop;" >> ${homedir}/share/applications/defaults.list; echo "application/x-sqlite3=sqlite-browser.desktop;" >> ${homedir}/share/applications/defaults.list;  update-mime-database ${datadir}/mime; update-desktop-database ${datadir}/mime;else echo "*** Mime database not updated.  After (un)install, run this:"; echo "***   update-mime-database ${datadir}/mime"; 	fi
 FOE
 
 
@@ -98,9 +106,11 @@ FOE
 
 
 if test -z "$*" -a "$NOCONFIGURE" != 1; then
+	echo
 	echo "**Warning**: I am going to run \`configure' with no arguments."
 	echo "If you wish to pass any to it, please specify them on the"
 	echo \`$0\'" command line."
+	echo "Using \"/usr/local\" as default installation directory."
 	echo
 fi
 
