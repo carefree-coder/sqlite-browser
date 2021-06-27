@@ -25,8 +25,6 @@ Installation
 
 Log out and log back in (for icons to be updated).
 
-  
-   <br/>  
    
 - the application should appear in your main menu.
 - Or, you can type "<b>sqlite-browser</b>" from a command line.
