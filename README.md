@@ -17,13 +17,17 @@ It does not (yet) have the feature to create or edit new databases. Currently, t
 
 Installation
 ------------
-<code>git clone https://github.com/carefree-coder/sqlite-browser.git</code>  
-<code>cd sqlite-browser</code>  
-<code>./autogen.sh [optional arguments]       eg: ./autogen.sh --prefix=/usr</code>  
-<code>make</code>  
-<code>make install</code>  
+`git clone https://github.com/carefree-coder/sqlite-browser.git`  
+`cd sqlite-browser`  
+`./autogen.sh [arguments]       eg: ./autogen.sh --prefix=/usr`  
+`make`  
+`make install`  
 
+Log out and log back in (for icons to be updated).
 
+  
+   <br/>  
+   
 - the application should appear in your main menu.
 - Or, you can type "<b>sqlite-browser</b>" from a command line.
 - Or, you can double-click on any sqlite database file to launch the app.
