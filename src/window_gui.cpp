@@ -835,7 +835,7 @@ void                make_treeview () {
 			pixbuf = gtk_icon_theme_load_icon (icon_theme,
 			                                   file, /* icon name */
 			                                   24, /* size */
-			                                   0,  /* flags */
+			                                   (GtkIconLookupFlags)GTK_ICON_LOOKUP_FORCE_SIZE,  /* flags */
 			                                   &error);
 			if (!pixbuf) {
 		    		g_warning ("Couldn't load icon: %s", error->message);
